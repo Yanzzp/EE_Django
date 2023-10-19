@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'EE_Django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'USER': 'YanServer',
+        'PASSWORD': '123test',
+        'HOST': '1.12.68.118',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
