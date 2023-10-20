@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vb9quc)cianzy8#lniqzfawljx0+of62n51pmw#rm-r8ct)&3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'test',
         'USER': 'YanServer',
         'PASSWORD': '123test',
-        'HOST': '1.12.68.118',
+        'HOST': 'yanzzp.xyz',
         'PORT': '3306',
     }
 }
@@ -109,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
