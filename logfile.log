@@ -1,4 +1,0 @@
-nohup: ignoring input
-Watching for file changes with StatReloader
-[20/Oct/2023 08:54:05] "GET / HTTP/1.1" 200 10600
-[20/Oct/2023 08:54:07] "GET / HTTP/1.1" 200 10600
