@@ -23,4 +23,5 @@ from user import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
+    path('', user.views.login, name='login'),  # 将根 URL 设置为登录视图
 ]
