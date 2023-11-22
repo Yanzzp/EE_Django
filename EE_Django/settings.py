@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import json
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -74,16 +77,11 @@ WSGI_APPLICATION = 'EE_Django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'YanServer',
-        'PASSWORD': '123test',
-        'HOST': 'yanzzp.xyz',
-        'PORT': '3306',
-    }
-}
+def load_database_configs(config_file='database_config.json'):
+    with open(config_file) as file:
+        return json.load(file)
+
+DATABASES = load_database_configs()
 
 
 

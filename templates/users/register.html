@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+</head>
+<body>
+    <h2>注册新用户</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="usm">用户名:</label>
+            <input type="text" id="usm" name="usm" required>
+        </div>
+        <div>
+            <label for="pwd">密码:</label>
+            <input type="password" id="pwd" name="pwd" required>
+        </div>
+        <div>
+            <button type="submit">注册</button>
+        </div>
+    </form>
+</body>
+</html>
