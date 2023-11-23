@@ -23,5 +23,6 @@ from user import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
+    path('goods/', include('goods.urls')),  # 添加这行来包含 goods 应用程序的 URL
     path('', user.views.login, name='login'),  # 将根 URL 设置为登录视图
 ]

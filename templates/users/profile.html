@@ -7,6 +7,45 @@
 <body>
 <h1>Welcome, {{ username }}</h1>
 
+{% if is_admin %}
+    <p>我是管理员</p>
+    <!-- 显示商品信息 -->
+    <h2>所有商品：</h2>
+    <table>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>价格</th>
+            <th>数量</th>
+            <th>图片</th>
+            <th>操作</th>
+        </tr>
+        {% for good in goods %}
+        <tr>
+            <td>{{ good.number }}</td>
+            <td>{{ good.name }}</td>
+            <td>{{ good.price }}</td>
+            <td>{{ good.quantity }}</td>
+            <td>
+                {% if good.image %}
+                    <img src="{{ good.image.url }}" alt="{{ good.name }}" width="100">
+                {% else %}
+                    无图片
+                {% endif %}
+            </td>
+            <td>
+                <form method="post" action="{% url 'goods:update_good' good.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" min="0" value="{{ good.quantity }}">
+                    <input type="text" name="price" value="{{ good.price }}">
+                    <input type="file" name="image">
+                    <button type="submit">更新</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
 
 <a href="{% url 'users:logout' %}" class="btn btn-primary">退出</a>
 </body>
